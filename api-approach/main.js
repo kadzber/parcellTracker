@@ -65,5 +65,5 @@ const url1 = `https://api-shipx-pl.easypack24.net/v1/tracking/${idPaczki}` ;
   });
 }
 
-// Call the function after the page loads
+
 window.onload = fetchDataFromApis;
