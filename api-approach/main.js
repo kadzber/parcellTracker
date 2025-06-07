@@ -5,7 +5,9 @@
 async function fetchDataFromApis() {
     let idPaczki = document.getElementById("numb").value;
 
+//TO DO:
 
+// Schować api key bo kurwa wstyd
 const url1 = `https://api-shipx-pl.easypack24.net/v1/tracking/${idPaczki}` ;
 
   const response1 = await fetch(url1);
@@ -18,7 +20,6 @@ const url1 = `https://api-shipx-pl.easypack24.net/v1/tracking/${idPaczki}` ;
 
   let output = "";
 
-  // Display tracking statuses from data1 (no checks)
   for (let i = 0; i < data1.tracking_details.length; i++) {
     output += data1.tracking_details[i].status + '<br>';
 
@@ -46,18 +47,15 @@ const url1 = `https://api-shipx-pl.easypack24.net/v1/tracking/${idPaczki}` ;
   console.log(postal, city, street, streetNumb)
 
 
-  // Extract coordinates from data2 (no checks)
   const lat = data2.results[0].lat;
   const lon = data2.results[0].lon;
 
   document.getElementById("output").innerHTML = output;
 
-  // Show map
   const center = { lat: lat, lng: lon };
   const map = new google.maps.Map(document.getElementById('map'), {
     center: center,
     zoom: 14,
-    // mapId: 'DEMO_MAP_ID', // Uncomment if you have a custom Map ID
   });
 
   const marker = new google.maps.Marker({
