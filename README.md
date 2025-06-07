@@ -2,4 +2,4 @@
 
 
 for api aproach use live server 
-and for webscraping aproach lunch the python file using python paczki.py
+and for webscraping aproach launch the python file using python paczki.py
